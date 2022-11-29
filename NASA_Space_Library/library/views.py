@@ -32,8 +32,4 @@ def home(request):
         {'copy':cpy, 'date':date, 'title':title, 'exp':exp, 'img':img},
     ]
 
-    employees = [
-          {'ID':1,'name':'Jim','age':35},
-          {'ID':2,'name':'Jane','age':25},
-    ]
     return render(request, 'library/home.html', {"resp":dct})
