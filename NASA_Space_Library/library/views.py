@@ -33,3 +33,7 @@ def home(request):
     ]
 
     return render(request, 'library/home.html', {"resp":dct})
+
+def contact(request):
+
+    return render(request, 'library/contact.html')

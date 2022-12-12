@@ -1,10 +1,59 @@
-
+<!--
   {% for dct in resp %}
-  <!--<a class="nav-link fw-bold py-1 px-100" href="{{link}}">{{data}}</a><br>-->
+  <a class="nav-link fw-bold py-1 px-100" href="{{link}}">{{data}}</a><br>
+  
   
     Copy: {{dct.copy}}
 
    
   {% endfor %}
   
+-->
 
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> NASA SPACE LIBRARY</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
+  <link rel="icon" href="favicon.io">
+</head>
+
+<body>
+  <h1><em> NASA SPACE LIBRARY </em> </h1>
+  <hr>
+  <br>
+  <a href="{% url 'contact' %}">Contact</a>
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn">=</button>
+    <div class="dropdown-content">
+      <a href="">Home</a>
+      <a href="https://www.nasa.gov">NASA</a>
+    </div>
+  </div>
+<br>
+<br>
+<a href="https://blogs.nasa.gov/artemis/">Todays read</a>
+<br>
+<br>
+
+<div class="container" align="center">
+
+  {% for dct in resp %}
+  <h1>{{dct.title}}</h1>
+  <p>Date: {{dct.date}}</p>
+  <img src="{{dct.img}}" alt="Satellite" height="500" width="500"><br>
+  <p>Copy: {{dct.copy}}</p>
+  <div class="container">
+  <p>{{dct.exp}}</p>  
+</div>
+  {% endfor %}
+
+</div>
+
+</body>
+</html>
